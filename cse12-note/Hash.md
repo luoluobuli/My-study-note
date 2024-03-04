@@ -6,6 +6,82 @@ The hash function guarantees that the same element will be given the same key, b
 
 **Collision**: an item being inserted into a hash table maps to the same bucket as an existing item in the hash table.  
 To solve collision, there are 2 methods.  
-1. Chaining
+**1. Chaining**
    
-3. Linear probing
+   ![image](images/Hash-1.png)  
+   Insert:  
+   ```
+   HashInsert(hashTable, item) {
+      if (HashSearch(hashTable, item⇢key) == null) {
+         bucketList = hashTable[Hash(item⇢key)]
+         node = Allocate new linked list node
+         node⇢next = null
+         node⇢data = item
+         ListAppend(bucketList, node)
+      }
+   }
+   ```
+   Remove:  
+   ```   
+   HashRemove(hashTable, item) {
+      bucketList = hashTable[Hash(item⇢key)]
+      itemNode = ListSearch(bucketList, item⇢key)
+      if (itemNode is not null) {
+         ListRemove(bucketList, itemNode)
+      } 
+   }
+   ```
+   Search:  
+   ```
+   HashSearch(hashTable, key) {
+      bucketList = hashTable[Hash(key)]
+      itemNode = ListSearch(bucketList, key)
+      if (itemNode is not null)
+         return itemNode⇢data
+      else
+         return null
+   }
+   ```
+
+**2. Linear probing**
+Insert:  
+```
+HashInsert(hashTable, item) {
+   // Hash function determines initial bucket
+   bucket = Hash(item.key)    
+   bucketsProbed = 0
+   N = hashTable's size
+   while (bucketsProbed < N) {
+      // Insert item in next empty bucket
+      if (hashTable[bucket] is Empty) {
+         hashTable[bucket] = item
+         return true 
+      }
+      // Increment bucket index
+      bucket = (bucket + 1) % N
+      // Increment number of buckets probed
+      ++bucketsProbed
+   }
+   return false      
+}
+```
+Search:  
+```
+HashSearch(hashTable, key) {
+   // Hash function determines initial bucket
+   bucket = Hash(key)
+   bucketsProbed = 0
+   while ((hashTable[bucket] is not EmptySinceStart) and
+         (bucketsProbed < N)) {
+      if ((hashTable[bucket] is not Empty) and
+         (hashTable[bucket]⇢key == key)) {
+         return hashTable[bucket]
+      }
+      // Increment bucket index
+      bucket = (bucket + 1) % N
+      // Increment number of buckets probed
+      ++bucketsProbed
+   }
+   return null  // Item not found
+}
+```
