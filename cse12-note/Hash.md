@@ -44,6 +44,7 @@ To solve collision, there are 2 methods.
    ```
 
 **2. Linear probing**  
+
 ![image](images/Hash-2.png)  
 Insert:  
 ```
