@@ -15,3 +15,13 @@
 
 
 ### Heap
+* A kind of **complete binary tree** that follows specific order.
+* **Min heap:** a node's key <= its children's key. **Max heap:** a node's key >= its children's key.  
+![image](images/Tree-4.png)
+* **Storage:** array  
+![image](images/Tree-5.png)
+* If the current index is i and the array starts to store data at index 0,  
+  **Parent's index:** ⌊i/2⌋  
+  **Left child's index:** 2i  
+  **Right child's index:** 2i+1  
+* **Height:** O(logN)  
