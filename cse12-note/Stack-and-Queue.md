@@ -1,11 +1,11 @@
 ### Stack
 **What is it:** abstract data type (ADT)  
-**Feature:** last-in, first-out (push on the top, pop at the top)  
+**Feature:** first in, last out (push on the top, pop at the top)  
 **Underlying data structure:** array  
 
 ### Queue
 **What is it:** ADT  
-**Feature:** first-in, first-out (enqueue at the end, dequeue at the front)  
+**Feature:** first in, first out (enqueue at the end, dequeue at the front)  
 **Underlying data structure:** array  
 
 ### Deque
