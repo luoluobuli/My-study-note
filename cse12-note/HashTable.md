@@ -8,7 +8,7 @@ The hash function guarantees that the same element will be given the same key, b
 To solve collision, there are 2 methods.  
 **1. Chaining**
    
-   ![image](images/Hash-1.png)  
+   ![image](images/HashTable-1.png)  
    Use a linked list for each bucket.  
    Insert:  
    ```
@@ -46,7 +46,7 @@ To solve collision, there are 2 methods.
 
 **2. Linear probing**  
 
-![image](images/Hash-2.png)  
+![image](images/HashTable-2.png)  
 Insert:  
 ```
 HashInsert(hashTable, item) {
