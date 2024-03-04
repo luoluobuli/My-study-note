@@ -1,7 +1,8 @@
 ### PA2 ArrayList Implementation
 **Underlying data structure:** array  
 **Instance:** `Object[] value`, `int length`  
-**Note:**  
-`getCapacity()` The length of the array  
-`size()` The number of elem in the array  
-capacity = value.length = the length of the array; size = the number of elem in the array
+**Methods:**  
+`getCapacity()` Length of the array = value.length  
+`size()` Number of elem in the array  
+`expandCapacity()` Create a new array with bigger size, copy everything into the new array, let the original reference point to the new array
+`insert()` `append()` `prepend()` Expand first if needed
