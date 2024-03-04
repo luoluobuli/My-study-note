@@ -9,6 +9,7 @@ To solve collision, there are 2 methods.
 **1. Chaining**
    
    ![image](images/Hash-1.png)  
+   Use a linked list for each bucket.  
    Insert:  
    ```
    HashInsert(hashTable, item) {
