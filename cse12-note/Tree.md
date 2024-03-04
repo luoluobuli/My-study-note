@@ -30,7 +30,14 @@
 
 ### Priority queue
 * ADT
+* **Underlying data structure:** heap
 * A queue where each item has a priority, and items with higher priority are closer to the front of the queue than items with lower priority
-* Methods:
+* **Methods:**  
   `Enqueue(PQueue, x)` Inserts x after all equal or higher priority items (sort here)  
-  `Dequeue(PQueue)`	Returns and removes the item at the front of PQueue  
+  `Dequeue(PQueue)`	Returns and removes the item at the front of PQueue (directly remove)  
+* **Runtime complexity:**  
+  enqueue: O(logN)  
+  dequeue: O(logN)  
+  peek: O(1)  
+  isEmpty: O(1)  
+  getLength: O(1)  
