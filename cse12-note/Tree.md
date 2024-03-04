@@ -4,19 +4,21 @@
 ![image](images/Tree-1.png)
 
 * **Binary tree:** a kind of tree that each node can have at most 2 children  
+  **Leaf:** A tree node with no children  
+  **Internal node:** A node with at least one child  
+  **Parent:** A node with a child is said to be that child's parent. A node's **ancestors** include the node's parent, the parent's parent, etc., up to the tree's root  
+  **Root:** The one tree node with no parent  
+  **Height:** number of edges to the deepest node (4 in this example)  
+  If only a root exists, the height is 0. If the tree is empty, the height can be 0 or -1.  
+![image](images/Tree-3.png)  
 * **Complete binary tree:** nodes are arranged from top to bottom, left to right
 * **Full binary tree:** each node has two or no children
 * **Perfect binary tree:** complete and full
 ![image](images/Tree-2.png)
 
-* **Leaf:** node that has no child
-* **Height:** number of edges to the deepest node (4 in this example)  
-  If only a root exists, the height is 0. If the tree is empty, the height can be 0 or -1.  
-![image](images/Tree-3.png)  
 
 
 ### Heap
-* Data structure
 * A kind of **complete binary tree** that follows specific order.
 * **Min heap:** a node's key <= its children's key. **Max heap:** a node's key >= its children's key.  
 ![image](images/Tree-4.png)
@@ -41,3 +43,6 @@
   peek: O(1)  
   isEmpty: O(1)  
   getLength: O(1)  
+
+### Binary search tree (BST)
+* A kind of **binary tree** that follows specific order.
