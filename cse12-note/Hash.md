@@ -12,11 +12,11 @@ To solve collision, there are 2 methods.
    Insert:  
    ```
    HashInsert(hashTable, item) {
-      if (HashSearch(hashTable, item⇢key) == null) {
-         bucketList = hashTable[Hash(item⇢key)]
+      if (HashSearch(hashTable, item.key) == null) {
+         bucketList = hashTable[Hash(item.key)]
          node = Allocate new linked list node
-         node⇢next = null
-         node⇢data = item
+         node.next = null
+         node.data = item
          ListAppend(bucketList, node)
       }
    }
@@ -24,8 +24,8 @@ To solve collision, there are 2 methods.
    Remove:  
    ```   
    HashRemove(hashTable, item) {
-      bucketList = hashTable[Hash(item⇢key)]
-      itemNode = ListSearch(bucketList, item⇢key)
+      bucketList = hashTable[Hash(item.key)]
+      itemNode = ListSearch(bucketList, item.key)
       if (itemNode is not null) {
          ListRemove(bucketList, itemNode)
       } 
@@ -37,7 +37,7 @@ To solve collision, there are 2 methods.
       bucketList = hashTable[Hash(key)]
       itemNode = ListSearch(bucketList, key)
       if (itemNode is not null)
-         return itemNode⇢data
+         return itemNode.data
       else
          return null
    }
@@ -76,7 +76,7 @@ HashSearch(hashTable, key) {
    while ((hashTable[bucket] is not EmptySinceStart) and
          (bucketsProbed < N)) {
       if ((hashTable[bucket] is not Empty) and
-         (hashTable[bucket]⇢key == key)) {
+         (hashTable[bucket].key == key)) {
          return hashTable[bucket]
       }
       // Increment bucket index
