@@ -1,15 +1,18 @@
-### Hash Tables
+### HashTable
 **What is it:** data structure  
 **Underlying data structure:** array  
-When mapped to a hash table, each element will be given a **key** by a **hash function**, and be assigned to a bucket with specific index.  
-The hash function guarantees that the same element will be given the same key, but different elements may also get the same key.
+**Derived from:** Dictionary  
+When mapped to a hash table, each element will be given a **key** by a **hash function**, and be assigned to a **bucket** with specific index.  
+if a==b, h(a) = h(b)  
+if a!= b, it's ok h(a) = h(b) -> collision  
 
 **Collision**: an item being inserted into a hash table maps to the same bucket as an existing item in the hash table.  
 To solve collision, there are 2 methods.  
-**1. Chaining**
-   
+**1. Chaining**  
+**Runtime complexity**: *worst:* O(N) | *average:* O(1+α)  where α is load factor
+
    ![image](images/HashTable-1.png)  
-   Use a linked list for each bucket.  
+   Use a **linked list** for each bucket.  
    Insert:  
    ```
    HashInsert(hashTable, item) {
@@ -45,6 +48,7 @@ To solve collision, there are 2 methods.
    ```
 
 **2. Linear probing**  
+**Runtime complexity**: *worst:* O(N) | *average:* O(1+α)  
 
 ![image](images/HashTable-2.png)  
 Insert:  
@@ -88,6 +92,7 @@ HashSearch(hashTable, key) {
    return null  // Item not found
 }
 ```
+
 **Resize:**  
 Expand the length of the array after hitting **load factor**, and re-assign each element in the old array to the new array.  
 ```
@@ -109,3 +114,7 @@ Hash(key, tableSize) {
    return key % tableSize
 }
 ```
+
+**Disadvantages of HashTable:**  
+- Takes extra space  
+- Can not sort
