@@ -32,17 +32,21 @@
 
 ### Priority queue
 * ADT
-* **Underlying data structure:** heap
+* **Underlying data structure:** array / linked list
 * A queue where each item has a priority, and items with higher priority are closer to the front of the queue than items with lower priority
-* **Methods:**  
-  `Enqueue(PQueue, x)` Inserts x after all equal or higher priority items (sort here)  
-  `Dequeue(PQueue)`	Returns and removes the item at the front of PQueue (directly remove)  
-* **Runtime complexity:**  
-  enqueue: O(logN)  
-  dequeue: O(logN)  
-  peek: O(1)  
-  isEmpty: O(1)  
-  getLength: O(1)  
+* **3 ways of implementation:**
+  1. Sorted array
+     - Insert based on priority sorted order
+     - Remove from front
+     - **Runtime:** enqueue: O(N) | dequeue: O(N) (or possibly O(1) if array is sorted reversely)
+  2. Unsorted linked list
+     - Insert in front
+     - Remove by searching highest-priority item
+     - **Runtime:** enqueue: O(1) | dequeue: O(N)
+  3. Sorted linked list
+     - Insert based on priority sorted order
+     - Remove from front
+     - **Runtime:** enqueue: O(N) | dequeue: O(1)  
 
 ### Binary search tree (BST)
 * A kind of **binary tree** that follows specific order.
