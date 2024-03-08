@@ -20,7 +20,7 @@ BubbleSort(array, size) {
 
 ### Selection Sort
 -  Treats the input as two parts, a sorted part and an unsorted part, and repeatedly selects the proper next value to move from the unsorted part to the end of the sorted part.  
-![image](images/Sort-selection.png)
+![image](images/Sort-selection2.png)
 ```
 SelectionSort(array, size) {
    i = 0
