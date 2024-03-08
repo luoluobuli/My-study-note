@@ -52,8 +52,8 @@ SelectionSort(array, size) {
 
 ### Insertion Sort
 - Treats the input as two parts, a sorted part and an unsorted part, and repeatedly inserts the next value from the unsorted part into the correct location in the sorted part.
-- **Difference from Selection Sort:** Selection: find the smallest then sort; Insersion: get elements from the unsorted part in order, place them in the sorted part.
-![image](Sort-insertion.png)
+- **Difference from Selection Sort:** Selection: find the smallest then sort; Insersion: get elements from the unsorted part in order, place them in the sorted part.  
+![image](images/Sort-insertion.png)
 ```
 InsertionSort(array, size) {
    i = 0
