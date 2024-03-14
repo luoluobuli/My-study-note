@@ -30,28 +30,28 @@
   - Prepend
     ```
     prepend(list, newItem) {
-       if (list.array.length == list.length) {
-          resize(list, list.length * 2)
-       }
+        if (list.array.length == list.length) {
+            resize(list, list.length * 2)
+        }
         // Shift every element one index right
-       for (i = list.length; i > 0; i--) {
-          list.array[i] = list.array[i - 1]
-       }
-       list.array[0] = newItem
+        for (i = list.length; i > 0; i--) {
+            list.array[i] = list.array[i - 1]
+        }
+        list.array[0] = newItem
     }
     ```
   - InsertAfter
     ```
     insertAfter(list, index, newItem) {
-       if (list.array.length == list.length) {
-          resize(list, list.length * 2)
-       }
+        if (list.array.length == list.length) {
+            resize(list, list.length * 2)
+        }
         // Shift every element after the given index one index right
-       for (i = list.length; i > index + 1; i--) {
-          list.array[i] = list.array[i - 1]
-       }
-       list.array[index + 1] = newItem
-       list.length = list.length + 1
+        for (i = list.length; i > index + 1; i--) {
+            list.array[i] = list.array[i - 1]
+        }
+        list.array[index + 1] = newItem
+        list.length = list.length + 1
     }
     ```
   - Search
@@ -98,7 +98,7 @@
       }
       ```
     - Prepend
-    ```
+      ```
       prepend(list, newNode) {
           // When list is empty
          if (list.head.next == null) {
@@ -131,24 +131,34 @@
       }
       ```
     - RemoveAfter
-```
-removeAfter(list, curNode) {
-   // Special case, remove head
-   if (curNode is null && list⇢head is not null) {
-      sucNode = list⇢head⇢next
-      list⇢head = sucNode
-
-      if (sucNode is null) { // Removed last item
-         list⇢tail = null
+      ```
+      removeAfter(list, curNode) {
+         // If curNode is null - remove the first element (special case)
+         if (curNode == null && list.head.next != null) {
+            sucNode = list.head.next
+            list.head.next = sucNode
+            // If removed tail
+            if (sucNode == null) {
+               list.tail = null
+            }
+         }
+         else if (curNode.next != null) {
+            sucNode = curNode.next.next
+            curNode.next = sucNode
+            // If removed tail
+            if (sucNode == null) { 
+               list.tail = curNode
+            }
+         }
       }
-   }
-   else if (curNode⇢next is not null) {
-      sucNode = curNode⇢next⇢next
-      curNode⇢next = sucNode
-
-      if (sucNode is null) { // Removed tail
-         list⇢tail = curNode
+      ```
+    - Traverse
+      ```
+      traverse(list) {
+         curNode = list.head.next // Start at head
+         while (curNode != null) { 
+            Print curNode's data
+            curNode = curNode.next
+         }
       }
-   }
-}
-```
+      ```
