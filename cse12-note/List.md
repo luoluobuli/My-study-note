@@ -78,7 +78,7 @@
     }
     ```
 
-### Singly-Linked list
+### Singly-Linked list (with dummy node)
 - **Type:** data structure
 - **Underlying data structure:** N/A
 - **Nested class:** `Node`
@@ -88,8 +88,8 @@
       ```
       append(list, newNode) {
           // When list is empty
-         if (list.head == null) {
-            list.head = newNode
+         if (list.head.next == null) {
+            list.head.next = newNode
             list.tail = newNode
          } else {
             list.tail.next = newNode
@@ -97,3 +97,58 @@
          }
       }
       ```
+    - Prepend
+    ```
+      prepend(list, newNode) {
+          // When list is empty
+         if (list.head.next == null) {
+            list.head.next = newNode
+            list.tail = newNode
+         }
+         else {
+            newNode.next = list.head.next
+            list.head.next = newNode
+         }
+      }
+      ```
+    - InsertAfter
+      ```
+      insertAfter(list, curNode, newNode) {
+          // When list is empty
+         if (list.head.next == null) { 
+            list.head.next = newNode
+            list.tail = newNode
+         }
+          // When curNode is tail
+         else if (curNode == list.tail) { 
+            list.tail.next = newNode
+            list.tail = newNode
+         }
+         else {
+            newNode.next = curNode.next
+            curNode.next = newNode
+         }
+      }
+      ```
+    - RemoveAfter
+```
+removeAfter(list, curNode) {
+   // Special case, remove head
+   if (curNode is null && list⇢head is not null) {
+      sucNode = list⇢head⇢next
+      list⇢head = sucNode
+
+      if (sucNode is null) { // Removed last item
+         list⇢tail = null
+      }
+   }
+   else if (curNode⇢next is not null) {
+      sucNode = curNode⇢next⇢next
+      curNode⇢next = sucNode
+
+      if (sucNode is null) { // Removed tail
+         list⇢tail = curNode
+      }
+   }
+}
+```
