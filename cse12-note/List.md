@@ -79,3 +79,6 @@
     ```
 
 ### Singly-Linked list
+- **Type:** data structure
+- **Underlying data structure:** N/A
+- **Inner class:** node
