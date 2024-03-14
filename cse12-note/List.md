@@ -69,6 +69,7 @@
     ```
     ArrayListRemoveAt(list, index) {
        if (index >= 0 && index < list.length) {
+          // Shift every element from given index one index left
           for (i = index; i < list.length - 1; i++) {
              list.array[i] = list.array[i + 1]
           }
