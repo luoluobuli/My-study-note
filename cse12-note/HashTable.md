@@ -14,7 +14,7 @@ To solve collision, there are 2 methods.
      Use a **linked list** for each bucket.  
    - Insert:  
       ```
-      insert(hashTable, item) {
+      HashInsert(hashTable, item) {
          if (search(hashTable, item.key) == null) {
             bucketList = hashTable[Hash(item.key)]
             node = Allocate new linked list node
@@ -26,7 +26,7 @@ To solve collision, there are 2 methods.
       ```
    - Remove:  
       ```
-      remove(hashTable, item) {
+      HashRemove(hashTable, item) {
          bucketList = hashTable[Hash(item.key)]
          itemNode = search(bucketList, item.key)
          if (itemNode != null) {
@@ -36,7 +36,7 @@ To solve collision, there are 2 methods.
       ```
    - Search:  
       ```
-      search(hashTable, key) {
+      HashSearch(hashTable, key) {
          bucketList = hashTable[Hash(key)]
          itemNode = ListSearch(bucketList, key)
          if (itemNode != null)
@@ -52,7 +52,7 @@ To solve collision, there are 2 methods.
       ![image](images/HashTable-2.png)  
    - Insert:  
       ```
-      insert(hashTable, item) {
+      Hashinsert(hashTable, item) {
          // Hash function determines initial bucket
          bucket = Hash(item.key)    
          bucketsProbed = 0
@@ -73,7 +73,7 @@ To solve collision, there are 2 methods.
       ```
    - Search:  
       ```
-      search(hashTable, key) {
+      HashSearch(hashTable, key) {
          // Hash function determines initial bucket
          bucket = Hash(key)
          bucketsProbed = 0
