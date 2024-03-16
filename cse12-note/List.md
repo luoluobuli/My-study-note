@@ -233,3 +233,36 @@
        }
     }
     ```
+    
+### Search
+- **Linear search**
+  ```
+  LinearSearch(numbers, numbersSize, key) {
+     i = 0
+  
+     for (i = 0; i < numbersSize; ++i) {
+        if (numbers[i] == key) {
+           return i
+        }
+     }
+        
+     return -1 // not found
+  }
+  ```
+  
+- **Binary search**
+  ```
+  BinarySearch(numbers, low, high, key) {
+     if (low > high)
+        return -1
+  
+     mid = (low + high) / 2
+     if (numbers[mid] < key) {
+        return BinarySearch(numbers, mid + 1, high, key)
+     }
+     else if (numbers[mid] > key) {
+        return BinarySearch(numbers, low, mid - 1, key)
+     }
+     return mid
+  }
+  ```
