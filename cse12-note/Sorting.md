@@ -98,6 +98,7 @@ Heapsort(numbers, numbersSize) {
   }
 }
 ```
+- **Runtime:** *all cases:* **O(NlogN)**
 
 ### Merge Sort
 - Divides a list into two halves, recursively sorts each half, and then merges the sorted halves to produce a sorted list.  
