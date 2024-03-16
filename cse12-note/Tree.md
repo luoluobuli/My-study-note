@@ -254,8 +254,8 @@
      if (node is null) {
         return -1
      }
-     leftHeight = BSTGetHeight(node⇢left)
-     rightHeight = BSTGetHeight(node⇢right)
+     leftHeight = BSTGetHeight(node.left)
+     rightHeight = BSTGetHeight(node.right)
      return 1 + max(leftHeight, rightHeight)
   }
   ```
