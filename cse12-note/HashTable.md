@@ -48,7 +48,7 @@ To solve collision, there are 2 methods.
       ```
 
 - **2. Linear probing**  
-   - **Runtime complexity**:
+   - **Runtime complexity**:  
      *worst:* **O(N)** | *average:* **O(1+α)**  
 
       ![image](images/HashTable-2.png)  
