@@ -79,3 +79,21 @@ InsertionSort(array, size) {
   Reversed array: *outer loop:* **N-1** | *inner loop:* **N/2** | *Total:* **N(N-1)**  
   Other cases: In between
   
+### Heap Sort
+- **Heapify:** The internal node with the largest index -> the root node at index 0
+  - the largest internal node index is **(N div 2) - 1**  
+  ![image](Sort-heap.png)
+- **Heapsort:** Repeatedly removes the maximum value, stores that value at the end index, and decrements the end index. The removal loop repeats until the end index is 0.
+  ```
+  Heapsort(numbers, numbersSize) {
+     // Heapify numbers array
+     for (i = numbersSize / 2 - 1; i >= 0; i--) {
+        MaxHeapPercolateDown(i, numbers, numbersSize)
+     }
+  
+     for (i = numbersSize - 1; i > 0; i--) {
+        Swap numbers[0] and numbers[i]
+        MaxHeapPercolateDown(0, numbers, i)
+     }
+  }
+  ```
