@@ -222,5 +222,5 @@ Quicksort(numbers, lowIndex, highIndex) {
 }
 ```
 - **Runtime:**  
-  *average case:* **O(NlogN)** when pivot separates two parts equally -> *partition:* **logN** | *sort:* **N**
+  *average case:* **O(NlogN)** when pivot separates two parts equally -> *partition:* **logN** | *sort:* **N**  
   *worst case:* **O(N^2)** when pivot is at edge -> *partition:* **N** | *sort:* **N**
