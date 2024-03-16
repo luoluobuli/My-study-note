@@ -21,7 +21,8 @@
 ### Heap
 * A kind of **complete binary tree** that follows specific order.
 * Data structure
-* **Min heap:** a node's key <= its children's key. **Max heap:** a node's key >= its children's key.  
+* **Min heap:** a node's key <= its children's key.
+  **Max heap:** a node's key >= its children's key.  
 ![image](images/Tree-4.png)
 * **Backend data structure:** array (different from other tree stuctures that use nodes!)
 ![image](images/Tree-5.png)
