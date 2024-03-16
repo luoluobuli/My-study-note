@@ -15,6 +15,45 @@
 * **Full binary tree:** each node has two or no children
 * **Perfect binary tree:** complete and full  
 ![image](images/Tree-6.png)
+* **Method:**
+  - Contains - recursion
+    ```
+    contains(toFind) {
+      return containsHelper(toFind, root)
+    }
+    ```
+    ```
+    containsHelper(toFind, curNode) {
+      if (curNode.value.equals(toFind)) return true
+      return contains(toFind, curNode.left || contains(toFind, curr.right)
+    }
+    ```
+    Note: Comparing to
+    ```
+    boolean l = contains(toFind, curNode.left)
+    boolean r = contains(toFind, curNode.right)
+    return l || r
+    ```
+    `return contains(toFind, curNode.left || contains(toFind, curr.right)` is better, because if toFind is found in the left child, we don't have to execute the second contains method.
+  - Contains - iteration
+    ```
+    contains(toFind) {
+      Stack<TNode> s = new Stack<>()
+      s.push(root)
+      while(!s.empty()) {
+        TNode tmp = s.pop
+        if (tmp.value.equals(key)) return true
+        if (tmp.left != null) {
+          s.push(temp.left)
+        }
+        if (tmp.right != null) {
+          s.push(temp.right)
+        }
+      }
+      return false
+    }
+    ```
+* **Runtime:** *worst case:* **O(N)**
 
 ### Heap
 * A kind of **complete binary tree** that follows specific order.
