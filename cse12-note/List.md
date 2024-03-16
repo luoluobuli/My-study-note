@@ -266,3 +266,5 @@
      return mid
   }
   ```
+  - **Runtime:** O(logN)
+  - Linked list doesn't support binary search
