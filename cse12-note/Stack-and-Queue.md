@@ -1,17 +1,17 @@
 ### Stack
-**What is it:** abstract data type (ADT)  
+**Type:** ADT
 **Feature:** first in, last out (push on the top, pop at the top)  
-**Underlying data structure:** ? 
+**Backend data structure:** linked list
 
 ### Queue
-**What is it:** ADT  
+**Type:** ADT  
 **Feature:** first in, first out (enqueue at the end, dequeue at the front)  
-**Underlying data structure:** ?
+**Backend data structure:** linked list
 
 ### Deque
-**What is it:** ADT  
+**Type:** ADT  
 **Feature:** double-sided queue, can push and pop at the front and the end  
-**Underlying data structure:** ?
+**Underlying data structure:** linked list
 
 ### Depth First Search (DFS)
 **Implementation:** Stack  
