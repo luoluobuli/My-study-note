@@ -166,3 +166,6 @@ Merge(numbers, i, j, k) {
    }
 }
 ```
+- **Runtime complexity:** *all cases:* **O(NlogN)**
+  *partition:* **O(logN)** | *merge:* **O(N)**
+- **Space complexity:** **O(N)**
