@@ -12,7 +12,7 @@
   - Note: **length** = the number of valid elements in the array; **array.length** = the capacity of the array.
   - Resize
     ```
-    resize(list, newCapacity) {
+    ListResize(list, newCapacity) {
        newArray = new Object[newCapacity]
        Copy all elements from list.array to newArray
        list.array = newArray
@@ -20,9 +20,9 @@
     ```
   - Append
     ```
-    append(list, newItem) {
+    ListAppend(list, newItem) {
        if (list.array.length == list.length) {
-          resize(list, list.length * 2)
+          ListResize(list, list.length * 2)
        }
        list.array[list.length] = newItem
        list.length = list.length + 1
@@ -30,9 +30,9 @@
     ```
   - Prepend
     ```
-    prepend(list, newItem) {
+    ListPrepend(list, newItem) {
         if (list.array.length == list.length) {
-            resize(list, list.length * 2)
+            ListResize(list, list.length * 2)
         }
         // Shift every element one index right
         for (i = list.length; i > 0; i--) {
@@ -43,9 +43,9 @@
     ```
   - InsertAfter
     ```
-    insertAfter(list, index, newItem) {
+    ListInsertAfter(list, index, newItem) {
         if (list.array.length == list.length) {
-            resize(list, list.length * 2)
+            ListResize(list, list.length * 2)
         }
         // Shift every element after the given index one index right
         for (i = list.length; i > index + 1; i--) {
@@ -57,7 +57,7 @@
     ```
   - Search
     ```
-    search(list, item) {
+    ListSearch(list, item) {
        for (i = 0; i < list.length; i++) {
           if (list.array[i] == item) {
              return i
@@ -68,7 +68,7 @@
     ```
   - RemoveAt
     ```
-    removeAt(list, index) {
+    ListRemoveAt(list, index) {
        if (index >= 0 && index < list.length) {
           // Shift every element from given index one index left
           for (i = index; i < list.length - 1; i++) {
@@ -89,7 +89,7 @@
 - **Methods:**
     - Append
       ```
-      append(list, newNode) {
+      ListAppend(list, newNode) {
           // When list is empty
          if (list.head.next == null) {
             list.head.next = newNode
@@ -102,7 +102,7 @@
       ```
     - Prepend
       ```
-      prepend(list, newNode) {
+      ListPrepend(list, newNode) {
           // When list is empty
          if (list.head.next == null) {
             list.head.next = newNode
@@ -116,7 +116,7 @@
       ```
     - InsertAfter
       ```
-      insertAfter(list, curNode, newNode) {
+      ListInsertAfter(list, curNode, newNode) {
           // When list is empty
          if (list.head.next == null) { 
             list.head.next = newNode
@@ -135,7 +135,7 @@
       ```
     - RemoveAfter
       ```
-      removeAfter(list, curNode) {
+      ListRemoveAfter(list, curNode) {
          // If curNode is null - remove the first element (special case)
          if (curNode == null && list.head.next != null) {
             sucNode = list.head.next
@@ -157,7 +157,7 @@
       ```
     - Traverse: loop
       ```
-      traverse(list) {
+      ListTraverse(list) {
          curNode = list.head.next // Start at head
          while (curNode != null) { 
             Print curNode's data
@@ -167,29 +167,29 @@
       ```
     - Traverse: recursive
       ```
-      traverse(list) {
-         traverseHelper(list.head.next)
+      ListTraverse(list) {
+         ListTraverseHelper(list.head.next)
       }
       
-      traverseHelper(node) {
+      ListTraverseHelper(node) {
          if (node != null) {
             Visit node
-            traverseHelper(node.next)
+            ListTraverseHelper(node.next)
          }
       }
       ```
     - Search
       ```
-      search(list, key) {
-         return searchHelper(key, list.head.next)
+      ListSearch(list, key) {
+         return ListSearchHelper(key, list.head.next)
       }
       
-      searchHelper(key, node) {
+      ListSearchHelper(key, node) {
          if (node != null) {
             if (node.data == key) {
                return node
             }
-            return searchHelper(key, node.next)
+            return ListSearchHelper(key, node.next)
          }
          return null
       }
@@ -205,7 +205,7 @@
 - **Methods:**
   - Append
     ```
-    append(list, newNode) {
+    ListAppend(list, newNode) {
        if (list.head.next == null) { // List empty
           list.head.next = newNode
           list.tail.prev = newNode
@@ -220,7 +220,7 @@
     ```
   - Prepend
     ```
-    prepend(list, newNode) {
+    ListPrepend(list, newNode) {
        if (list.head.next == null) { // List empty
           list.head.next = newNode
           list.tail.prev = newNode
