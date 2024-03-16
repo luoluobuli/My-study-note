@@ -5,6 +5,7 @@
 
 ### ArrayList
 - **Type:** data structure
+- **Implements:** List
 - **Underlying data structure:** array
 - **Instance:** `Object[] array`, `int length`
 - **Methods:**
@@ -78,10 +79,12 @@
     }
     ```
 
-### Singly-Linked list (with dummy node)
+### Singly-linked list (dummy node at head)
 - **Type:** data structure
+- **Implements:** List
 - **Underlying data structure:** N/A
 - **Nested class:** `Node`
+  - **Nested instance:** `Node next`, `E data`
 - **Instance:** `Node head`, `Node tail`, `int size`
 - **Methods:**
     - Append
@@ -152,7 +155,7 @@
          }
       }
       ```
-    - Traverse
+    - Traverse: loop
       ```
       traverse(list) {
          curNode = list.head.next // Start at head
@@ -162,3 +165,71 @@
          }
       }
       ```
+    - Traverse: recursive
+      ```
+      traverse(list) {
+         traverseHelper(list.head.next)
+      }
+      
+      traverseHelper(node) {
+         if (node != null) {
+            Visit node
+            traverseHelper(node.next)
+         }
+      }
+      ```
+    - Search
+      ```
+      search(list, key) {
+         return searchHelper(key, list.head.next)
+      }
+      
+      searchHelper(key, node) {
+         if (node != null) {
+            if (node.data == key) {
+               return node
+            }
+            return searchHelper(key, node.next)
+         }
+         return null
+      }
+      ```
+
+### Doubly-linked list (dummy node at both ends)
+- **Type:** data structure
+- **Implements:** List
+- **Underlying data structure:** N/A
+- **Nested class:** `Node`
+  - **Nested instance:** `Node next`, `Node prev`, `E data`
+- **Instance:** `Node head`, `Node tail`, `int size`
+- **Methods:**
+  - Append
+    ```
+    append(list, newNode) {
+       if (list.head.next == null) { // List empty
+          list.head.next = newNode
+          list.tail.prev = newNode
+       }
+       else {
+          list.tail.prev.next = newNode
+          newNode.prev = list.tail.prev
+          list.tail.prev = newNode
+          newNode.next = list.tail
+       }
+    }
+    ```
+  - Prepend
+    ```
+    prepend(list, newNode) {
+       if (list.head.next == null) { // List empty
+          list.head.next = newNode
+          list.tail.prev = newNode
+       }
+       else {
+          newNode.next = list.head.next
+          list.head.next.prev = newNode
+          list.head.next = newNode
+          newNode.prev = head
+       }
+    }
+    ```
