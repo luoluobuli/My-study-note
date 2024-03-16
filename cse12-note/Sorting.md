@@ -100,6 +100,26 @@ Heapsort(numbers, numbersSize) {
 ```
 
 ### Merge Sort
+- Divides a list into two halves, recursively sorts each half, and then merges the sorted halves to produce a sorted list.  
+![image](Sort-merge.png)
+- **Partitioning:** `i` = the index of first element in the list, `k` = the index of the last element, `j` = an index in between. Elements from `i` to `j` are in the left half, and elements from `j + 1` to `k` are in the right half.
+```
+MergeSort(numbers, i, k) {
+   j = 0
+   
+   if (i < k) {
+      j = (i + k) / 2  // Find the midpoint in the partition
+      
+      // Recursively sort left and right partitions
+      MergeSort(numbers, i, j)
+      MergeSort(numbers, j + 1, k)
+      
+      // Merge left and right partition in sorted order
+      Merge(numbers, i, j, k)
+   }
+}
+```
+- **Merging:** Takes `leftFirst`, `leftLast`, `rightLast` as parameters ("rightFirst" = `leftLast + 1`). Compare the elements in the left and right half starting from `leftFirst` and `leftLast + 1`. Put the smaller one in the merged array and compare the larger one with the next element in the other half. When one half goes to the end, we add the rest of the other half to the merged array.
 ```
 Merge(numbers, i, j, k) {
    mergedSize = k - i + 1                // Size of merged partition
@@ -143,22 +163,6 @@ Merge(numbers, i, j, k) {
    // Copy merge number back to numbers
    for (mergePos = 0; mergePos < mergedSize; ++mergePos) {
       numbers[i + mergePos] = mergedNumbers[mergePos]
-   }
-}
-```
-```
-MergeSort(numbers, i, k) {
-   j = 0
-   
-   if (i < k) {
-      j = (i + k) / 2  // Find the midpoint in the partition
-      
-      // Recursively sort left and right partitions
-      MergeSort(numbers, i, j)
-      MergeSort(numbers, j + 1, k)
-      
-      // Merge left and right partition in sorted order
-      Merge(numbers, i, j, k)
    }
 }
 ```
