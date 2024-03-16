@@ -1,10 +1,11 @@
 ### HashTable
 - **Type:** data structure
-- **Implements:** Dictionary
+- **Implements:** Dictionary ADT
 - **Backend data structure:** array
 - When mapped to a hash table, each element will be given a **key** by a **hash function**, and be assigned to a **bucket** with specific index.  
 if a==b, h(a) = h(b)  
-if a!= b, it's ok h(a) = h(b) -> collision  
+if a!= b, it's ok h(a) = h(b) -> collision
+- **Hash funcion:** must be **fast**, **deterministic** and **uniform**
 - **Collision**: An item being inserted into a hash table maps to the same bucket as an existing item in the hash table.  
 To solve collision, there are 2 methods.  
 - **Chaining**  
@@ -95,7 +96,8 @@ To solve collision, there are 2 methods.
       ```
 
 - **Resize**
-   - Expand the length of the array after hitting **load factor**, and re-assign each element in the old array to the new array.  
+   - Expand the length of the array after hitting **load factor**, and re-assign each element in the old array to the new array.
+   - **load factor = N/M** where N is the number of elements and M is the size of the table
       ```
       HashResize(hashTable, currentSize) {
          newSize = nextPrime(currentSize * 2)
