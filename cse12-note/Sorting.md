@@ -166,6 +166,61 @@ Merge(numbers, i, j, k) {
    }
 }
 ```
-- **Runtime complexity:** *all cases:* **O(NlogN)**
+- **Runtime:** *all cases:* **O(NlogN)**
   *partition:* **O(logN)** | *merge:* **O(N)**
-- **Space complexity:** **O(N)**
+
+### Quicksort
+- **Partition**
+```
+Partition(numbers, lowIndex, highIndex) {
+   // Pick middle element as pivot
+   midpoint = lowIndex + (highIndex - lowIndex) / 2
+   pivot = numbers[midpoint]
+   
+   done = false
+   while (!done) {
+      // Increment lowIndex while numbers[lowIndex] < pivot
+      while (numbers[lowIndex] < pivot) {
+         lowIndex += 1
+      }
+      
+      // Decrement highIndex while pivot < numbers[highIndex]
+      while (pivot < numbers[highIndex]) {
+         highIndex -= 1
+      }
+      
+      // If zero or one elements remain, then all numbers are 
+      // partitioned. Return highIndex.
+      if (lowIndex >= highIndex) {
+         done = true
+      }
+      else {
+         // Swap numbers[lowIndex] and numbers[highIndex]
+         temp = numbers[lowIndex]
+         numbers[lowIndex] = numbers[highIndex]
+         numbers[highIndex] = temp
+         
+         // Update lowIndex and highIndex
+         lowIndex += 1
+         highIndex -= 1
+      }
+   }
+   
+   return highIndex
+}
+```
+- **Sort**
+```
+Quicksort(numbers, lowIndex, highIndex) {
+   if (lowIndex >= highIndex) {
+      return
+   }
+
+   lowEndIndex = Partition(numbers, lowIndex, highIndex)
+   Quicksort(numbers, lowIndex, lowEndIndex)
+   Quicksort(numbers, lowEndIndex + 1, highIndex)
+}
+```
+- **Runtime:**  
+  *average case:* **O(NlogN)** when pivot separates two parts equally -> *partition:* **logN** | *sort:* **N**
+  *worst case:* **O(N^2)** when pivot is at edge -> *partition:* **N** | *sort:* **N**
