@@ -38,15 +38,15 @@
   1. Sorted array
      - Insert based on priority sorted order
      - Remove from front
-     - **Runtime:** enqueue: O(N) | dequeue: O(N) (or possibly O(1) if array is sorted reversely)
+     - enqueue: **O(N)** | dequeue: **O(N)** (or possibly **O(1)** if array is sorted reversely)
   2. Unsorted linked list
      - Insert in front
      - Remove by searching highest-priority item
-     - **Runtime:** enqueue: O(1) | dequeue: O(N)
+     - enqueue: **O(1)** | dequeue: **O(N)**
   3. Sorted linked list
      - Insert based on priority sorted order
      - Remove from front
-     - **Runtime:** enqueue: O(N) | dequeue: O(1)  
+     - enqueue: **O(N)** | dequeue: **O(1)**  
 
 ### Binary search tree (BST)
 * A kind of **binary tree** that follows specific order.
