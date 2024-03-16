@@ -16,8 +16,6 @@
 * **Perfect binary tree:** complete and full  
 ![image](images/Tree-6.png)
 
-
-
 ### Heap
 * A kind of **complete binary tree** that follows specific order.
 * Data structure
