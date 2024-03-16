@@ -48,7 +48,7 @@ SelectionSort(array, size) {
 ```
 - **Runtime:** *all cases:* **O(N^2)**  
   *Outer loop:* **N-1** | *Inner loop:* **N/2** | *Total:* **(N-1)N/2**
-- The minimum number of assigning indexSmallest:
+- The minimum number of assigning indexSmallest:  
   **N** *(in total)* | **N-1** *(inside loop)*
 
 ### Insertion Sort
