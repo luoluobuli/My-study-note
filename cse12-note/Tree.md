@@ -23,7 +23,7 @@
 * Data structure
 * **Min heap:** a node's key <= its children's key. **Max heap:** a node's key >= its children's key.  
 ![image](images/Tree-4.png)
-* **Underlying data structure:** array  
+* **Backend data structure:** array (different from other tree stuctures that use nodes!)
 ![image](images/Tree-5.png)
 * If the current index is i and the array starts to store data at index 0,  
   **Parent's index:** ⌊i/2⌋  
