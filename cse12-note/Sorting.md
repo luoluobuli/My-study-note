@@ -83,7 +83,7 @@ InsertionSort(array, size) {
 ### Heap Sort
 - **Heapify:** The internal node with the largest index -> the root node at index 0
   - the largest internal node index is **(N div 2) - 1**  
-  ![image](Sort-heap.png)
+  ![image](images/Sort-heap.png)
 - **Heapsort:** Repeatedly removes the maximum value, stores that value at the end index, and decrements the end index. The removal loop repeats until the end index is 0.
 ```
 Heapsort(numbers, numbersSize) {
@@ -101,7 +101,7 @@ Heapsort(numbers, numbersSize) {
 
 ### Merge Sort
 - Divides a list into two halves, recursively sorts each half, and then merges the sorted halves to produce a sorted list.  
-![image](Sort-merge.png)
+![image](images/Sort-merge.png)
 - **Partitioning:** `i` = the index of first element in the list, `k` = the index of the last element, `j` = an index in between. Elements from `i` to `j` are in the left half, and elements from `j + 1` to `k` are in the right half.
 ```
 MergeSort(numbers, i, k) {
