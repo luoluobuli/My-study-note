@@ -26,11 +26,48 @@
 ![image](images/Tree-4.png)
 * **Backend data structure:** array (different from other tree stuctures that use nodes!)
 ![image](images/Tree-5.png)
-* If the current index is i and the array starts to store data at index 0,  
-  **Parent's index:** ⌊i/2⌋  
+* If the current index is i and the array starts to store data at index 1,  
+  **Parent's index:** i div 2  
   **Left child's index:** 2i  
-  **Right child's index:** 2i+1  
-* **Height:** O(logN)  
+  **Right child's index:** 2i+1
+  **Index of last parent:** size div 2
+* **Height:** O(logN)
+* **Methods:**
+  - Remove
+    ```
+    remove(index) {
+      Swap index with the last element's index
+      TrickleDown
+    }
+    ```
+    ```
+    TrickleDown(index) {
+      If element at index is a leaf, return
+      If value at index has no children < it, return
+      Swap value at index with its smaller child at childIndex
+      TrickleDown(childIndex)
+    }
+    ```
+  - Insert
+    ```
+    insert(value) {
+      Insert value to the end of array
+      BubbleUp(index)
+    }
+    ```
+    ```
+    BubbleUp(index) {
+      If value at index >= parent, return
+      Swap value at index with its parent at parentIndex
+      BubbleUp(parentIndex)
+    }
+    ```
+- **Runtime:** **O(logN)** for both remove and insert
+- **Build the heap:**
+  - Method 1: create an array with enough space, insert the value one by one and check if it gives violation.  
+    Runtime: **O(NlogN)**
+  - Method 2: Heapify - divide the array into parents and leaves, check from the last parent & check if the parent and children have violation.  
+    Runtime: **O(n)**
 
 ### Priority queue
 * ADT
