@@ -170,6 +170,7 @@ Merge(numbers, i, j, k) {
   *partition:* **O(logN)** | *merge:* **O(N)**
 
 ### Quicksort
+![image](images/Sort-quick.png)
 - **Partition**
 ```
 Partition(numbers, lowIndex, highIndex) {
@@ -224,3 +225,99 @@ Quicksort(numbers, lowIndex, highIndex) {
 - **Runtime:**  
   *average case:* **O(NlogN)** when pivot separates two parts equally -> *partition:* **logN** | *sort:* **N**  
   *worst case:* **O(N^2)** when pivot is at edge -> *partition:* **N** | *sort:* **N**
+
+### Radix Sort
+![image](images/Sort-radix.png)  
+- Radix sort for non-negative integers
+  ```
+  RadixSort(array, arraySize) {
+     buckets = create array of 10 buckets
+  
+     // Find the max length, in number of digits
+     maxDigits = RadixGetMaxLength(array, arraySize)
+        
+     // Start with the least significant digit
+     pow10 = 1
+     for (digitIndex = 0; digitIndex < maxDigits; digitIndex++) {
+        for (i = 0; i < arraySize; i++) {
+           bucketIndex = abs(array[i] / pow10) % 10
+           Append array[i] to buckets[bucketIndex]
+        }
+        arrayIndex = 0
+        for (i = 0; i < 10; i++) {
+           for (j = 0; j < buckets[i]⇢size(); j++)
+              array[arrayIndex++] = buckets[i][j]
+        }
+        pow10 = 10 * pow10
+        Clear all buckets
+     }
+  }
+  ```
+- Radix sort for all integers
+  ```
+  RadixSort(array, arraySize) {
+     buckets = create array of 10 buckets
+  
+     // Find the max length, in number of digits
+     maxDigits = RadixGetMaxLength(array, arraySize)
+          
+     pow10 = 1
+     for (digitIndex = 0; digitIndex < maxDigits; digitIndex++) {
+        for (i = 0; i < arraySize; i++) {
+           bucketIndex = abs(array[i] / pow10) % 10
+           Append array[i] to buckets[bucketIndex]
+        }
+        arrayIndex = 0
+        for (i = 0; i < 10; i++) {
+           for (j = 0; j < buckets[i]⇢size(); j++) {
+              array[arrayIndex] = buckets[i][j]
+              arrayIndex = arrayIndex + 1
+           }
+        }
+        pow10 = pow10 * 10
+        Clear all buckets
+     }
+  
+     negatives = all negative values from array
+     nonNegatives = all non-negative values from array
+     Reverse order of negatives
+     Concatenate negatives and nonNegatives into array
+  }
+  ```
+- Get max length
+  ```
+  // Returns the maximum length, in number of digits, out of all elements in the array
+  RadixGetMaxLength(array, arraySize) {
+     maxDigits = 0
+     for (i = 0; i < arraySize; i++) {
+        digitCount = RadixGetLength(array[i])
+        if (digitCount > maxDigits)
+           maxDigits = digitCount
+     }
+     return maxDigits
+  }
+  ```
+- Get length
+  ```
+  // Returns the length, in number of digits, of value
+  RadixGetLength(value) {
+     if (value == 0)
+        return 1
+  
+     digits = 0
+     while (value != 0) {
+        digits = digits + 1
+        value = value / 10
+     }
+     return digits
+  }
+  ```
+  - **Runtime:** *all cases:* **O(N)**
+ 
+  ### Wrap up
+  - **Fast sorting algorithm:** average runtime <= O(NlogN)  
+    ![image](images/Sort-comparison1.png)
+  - **Comparison sorting algorithm:** algorithm that operates comparison  
+    ![image](images/Sort-comparison2.png)
+  - Fast sorting algorithm's best, average, and worst case runtime complexity:  
+    ![image](images/Sort-comparison3.png)
