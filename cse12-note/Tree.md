@@ -260,5 +260,6 @@
   }
   ```
 * **Runtime complexity:**  
+  build the tree: *best case:* O(NlogN) | *worst case:* O(N^2)  
   search: *best case:* O(logN) | *worst case:* O(N)  
   insert: *best case:* O(logN) | *worst case:* O(N)  
