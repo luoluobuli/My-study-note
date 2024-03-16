@@ -8,7 +8,8 @@ if a!= b, it's ok h(a) = h(b) -> collision
 - **Collision**: An item being inserted into a hash table maps to the same bucket as an existing item in the hash table.  
 To solve collision, there are 2 methods.  
 - **Chaining**  
-   - **Runtime complexity** | *worst:* **O(N)** | *average:* **O(1+α)**  where α is load factor
+   - **Runtime complexity:**  
+     *worst:* **O(N)** | *average:* **O(1+α)**  where α is load factor
      
      ![image](images/HashTable-1.png)  
      Use a **linked list** for each bucket.  
