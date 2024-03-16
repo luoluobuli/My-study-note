@@ -20,6 +20,7 @@
 
 ### Heap
 * A kind of **complete binary tree** that follows specific order.
+* Data structure
 * **Min heap:** a node's key <= its children's key. **Max heap:** a node's key >= its children's key.  
 ![image](images/Tree-4.png)
 * **Underlying data structure:** array  
@@ -32,7 +33,7 @@
 
 ### Priority queue
 * ADT
-* **Underlying data structure:** array / linked list
+* **Backend data structure:** array / linked list
 * A queue where each item has a priority, and items with higher priority are closer to the front of the queue than items with lower priority
 * **3 ways of implementation:**
   1. Sorted array
