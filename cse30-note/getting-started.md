@@ -20,4 +20,4 @@ Reading: [c-for-java-programmers](https://drive.google.com/file/d/1YpDcP5WyxiF6l
 - In C, there is *no way* to get the length of an array.
 - In C, strings are arrays of chars.  
   `char name[] = "George";` - Don't have to specify the length of the array here
-- In C, functions must be declared before they can be used.
+- In C, functions must be declared before they can be used. Use a **forward declaration** if need to define a function after its first use.
