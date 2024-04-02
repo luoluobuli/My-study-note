@@ -7,3 +7,14 @@ Reference:
 Reading: [c-for-java-programmers](https://drive.google.com/file/d/1YpDcP5WyxiF6lyXFadFWXfSr8jSHgHi9/view)
 - C doesn't have `boolean` variable; it uses **0** to represent **false**, and **any non-zero value** to represent **true**.
 - `const` in C = `final` in java
+- Array initialization
+    - In java:  
+      `int[] numbers;`  
+      `int[] numbers = new int[3];`  
+      `int[] numbers = {1, 2, 3};`
+    - In C:  
+      `int numbers[3];`  
+      `int numbers[3] = {1, 2, 3};`
+    - In C, you put the square brackets *after* the variable name and you have to know the size of the array *at compile-time*.
+- Arrays and other reference types are often called **pointers** in C since they “point” to the data in memory.
+- In C, there is *no way* to get the length of an array.
