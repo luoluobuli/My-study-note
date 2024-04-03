@@ -40,24 +40,13 @@ g++ --version
 - Install CMake
 ```
 sudo apt-get -y install cmake
+which cmake
+cmake --version
 ```
 
 - Install CMake GUI
 ```
 sudo apt-get -y install cmake-qt-gui
-```
-
-- Download and unpack binaries
-```
-wget https://cmake.org/files/v3.4/cmake-3.4.1-Linux-x86_64.tar.gz
-tar xf cmake-3.4.1-Linux-x86_64.tar.gz
-export PATH="`pwd`/cmake-3.4.1-Linux-x86_64/bin:$PATH"
-```
-
-- Check location and version
-```
-which cmake
-cmake --version
 which cmake-gui
 cmake-gui --version
 ```
