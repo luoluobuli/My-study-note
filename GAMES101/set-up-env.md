@@ -4,7 +4,8 @@
   - Install Linux with WSL
   - Install VSCode
 - On Linux
-  - Connect VSCode to Linux and install extensions
+  - Connect VSCode to Linux
+  - Install g++
   - Install CMake
   - Install OpenCV
   - Install Eigen
@@ -26,7 +27,14 @@ wsl --install -d Ubuntu-18.04
 - On Windows, install VSCode from the official website
 - Open Ubuntu command line, `cd` to the working directory
 - Run `code .`
-- Install VSCode extensions: C/C++, C/C++ Extensions, CMake, CMake Tools
+
+### Install g++
+> [Install and Use G++ on Ubuntu](https://linuxhint.com/install-and-use-g-on-ubuntu/)
+```
+sudo apt update
+sudo apt install build-essential
+g++ --version
+```
 
 ### Install CMake
 > [2.1. CMake Installation](https://cgold.readthedocs.io/en/latest/first-step/installation.html)
