@@ -13,10 +13,9 @@
 ### Install Linux on Windows with WSL
 > [Install WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 - Open PowerShell or Windows Command Prompt in administrator mode
-- Install Ubuntu 18.04
+- Install Ubuntu
 ```
-wsl --list --online
-wsl --install -d Ubuntu-18.04
+wsl --install
 ```
 - Set username and password
 
@@ -64,3 +63,15 @@ cmake-gui --version
 ```
 
 ### Install OpenCV
+> [How to Install opencv in C++ on Linux?](https://www.geeksforgeeks.org/how-to-install-opencv-in-c-on-linux/)
+>
+> [OpenCV: Installation in Linux](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html)
+>
+```
+sudo apt install -y g++ cmake make git libgtk2.0-dev pkg-config
+git clone https://github.com/opencv/opencv.git
+mkdir -p build && cd build
+cmake ../opencv
+make -j4
+sudo make install
+```
