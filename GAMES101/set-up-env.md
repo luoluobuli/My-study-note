@@ -65,3 +65,8 @@ cmake ../opencv
 make -j4
 sudo make install
 ```
+
+### Install Eigen3
+```
+sudo apt install libeigen3-dev
+```
