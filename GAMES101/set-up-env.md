@@ -1,5 +1,5 @@
 # Setting Up Programming Environment on Windows
-### Process
+### Steps
 - On Windows
   - Install Linux with WSL
   - Install VSCode
