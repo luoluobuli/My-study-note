@@ -66,7 +66,7 @@ make -j4
 sudo make install
 ```
 
-### Install Eigen3
+### Install Eigen
 ```
 sudo apt install libeigen3-dev
 ```
