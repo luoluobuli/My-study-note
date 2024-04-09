@@ -18,6 +18,9 @@ Reading: [c-for-java-programmers](https://drive.google.com/file/d/1YpDcP5WyxiF6l
     - In C, you put the square brackets *after* the variable name and you have to know the size of the array *at compile-time*.
 - Arrays and other reference types are often called **pointers** in C since they “point” to the data in memory.
 - In C, there is *no way* to get the length of an array.
-- In C, strings are arrays of chars.  
-  `char name[] = "George";` - Don't have to specify the length of the array here
+- In C, strings are arrays of char with a NUL character indicating the end of the string.  
+  `char name[] = "George";` - Don't have to specify the length of the array here  
 - In C, functions must be declared before they can be used. Use a **forward declaration** if need to define a function after its first use.
+- What C standard library doesn't have:
+    - Java's Collections: lists, trees, sets, hashtables...
+    - Generic functions
